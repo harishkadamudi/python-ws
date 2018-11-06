@@ -15,19 +15,18 @@ insert_query = "INSERT INTO users values (?,?,?)"
 cursor.execute(insert_query, user)
 
 users = [
-	(2, 'harish', 'password'),
-	(3, 'siddu', 'password')
+    (2, 'harish', 'password'),
+    (3, 'siddu', 'password')
 ]
 
-cursor.executemany(insert_query,users)
+cursor.executemany(insert_query, users)
 
 
 select_query = "SELECT * FROM users"
 
 for row in cursor.execute(select_query):
-	print(row)
+    print(row)
 
 connection.commit()
 
 connection.close()
-
